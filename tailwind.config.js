@@ -25,6 +25,7 @@ module.exports = {
     './vendor/studio1902/**/*.blade.php',
     './vendor/studio1902/**/*.html',
     './vendor/studio1902/**/*.js',
+    './node_modules/tw-elements/dist/js/**/*.js',
   ],
   safelist: []
 }

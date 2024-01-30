@@ -70,6 +70,7 @@ module.exports = {
       // black: 900,
     },
   },
+  darkMode: "class",
   plugins: [
     plugin(function({ addBase, addComponents, addUtilities, theme }) {
       addBase({
@@ -100,5 +101,6 @@ module.exports = {
       addUtilities({
       })
     }),
+    require("tw-elements/dist/plugin.cjs"),
   ]
 }
