@@ -15,8 +15,8 @@ module.exports = {
     // Here we define the default colors available. If you want to include
     // all default Tailwind colors you should extend the colors instead.
     colors: {
-      black:   '#000',
-      white:  '#fff',
+      black: '#000',
+      white: '#fff',
       // Neutrals: neutral colors, with a default fallback if you don't need shades. Always set a DEFAULT when you use shades.
       neutral: {
         DEFAULT: colors.slate['800'],
@@ -71,8 +71,12 @@ module.exports = {
     },
   },
   darkMode: "class",
+  corePlugins: {
+    preflight: true,
+  },
+
   plugins: [
-    plugin(function({ addBase, addComponents, addUtilities, theme }) {
+    plugin(function ({ addBase, addComponents, addUtilities, theme }) {
       addBase({
         // Default color transition on links unless user prefers reduced motion.
         '@media (prefers-reduced-motion: no-preference)': {
@@ -81,25 +85,25 @@ module.exports = {
           },
         },
         'html': {
-            color: theme('colors.neutral.DEFAULT'),
-            //--------------------------------------------------------------------------
-            // Set sans, serif or mono stack with optional custom font as default.
-            //--------------------------------------------------------------------------
-            // fontFamily: theme('fontFamily.mono'),
-            fontFamily: theme('fontFamily.sans'),
-            // fontFamily: theme('fontFamily.serif'),
+          color: theme('colors.neutral.DEFAULT'),
+          //--------------------------------------------------------------------------
+          // Set sans, serif or mono stack with optional custom font as default.
+          //--------------------------------------------------------------------------
+          // fontFamily: theme('fontFamily.mono'),
+          fontFamily: theme('fontFamily.sans'),
+          // fontFamily: theme('fontFamily.serif'),
         },
         'mark': {
           backgroundColor: theme('colors.primary.DEFAULT'),
           color: theme('colors.white')
         },
       }),
-      // Custom components for this particular site.
-      addComponents({
-      }),
-      // Custom utilities for this particular site.
-      addUtilities({
-      })
+        // Custom components for this particular site.
+        addComponents({
+        }),
+        // Custom utilities for this particular site.
+        addUtilities({
+        })
     }),
     require("tw-elements/dist/plugin.cjs"),
   ]
